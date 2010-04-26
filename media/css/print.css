@@ -1,0 +1,35 @@
+html
+{
+    background: white;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    font-size: 8px;
+}
+
+.col, .margin
+{
+    padding: 0;
+}
+
+a
+{
+    color: black;
+    text-decoration: none;
+}
+
+a.link:link:after, a.link:visited:after
+{
+    content: " (" attr(href) ") ";
+    font-size: 90%;
+}
+
+h1, #title, #message, #navigation, #tools, #footer, .noprint
+{
+    display: none;
+}

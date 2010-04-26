@@ -1,0 +1,17 @@
+{% load comments %}
+<form action="{% comment_form_target %}" method="post">
+    <fieldset>
+        {% for field in comment_form %}
+            {% if field.is_hidden %}
+                {{ field }}
+            {% else %}
+                {% ifequal field.name "honeypot" %}
+                    <div class="hide">{{ field }}</div>
+                {% else %}
+                    {{ field.label_tag }}{{ field }}<br />
+                {% endifequal %}
+            {% endif %}
+        {% endfor %}
+        <input type="submit" name="send" id="submit-post" value="Envoyer" />
+    </fieldset>
+</form>

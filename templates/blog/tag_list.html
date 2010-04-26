@@ -1,0 +1,6 @@
+<p>
+Liste des tags :
+{% for tag in tags %}
+    <a href="{{ tag.get_absolute_url }}">{{ tag }}</a>
+{% endfor %}
+</p>

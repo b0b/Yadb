@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load markup %}
+{% load comments %}
+
+{% block title %}Blog - {{ article.title }}{% endblock %}
+{% block media %}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}/css/pygments.css" type="text/css" />
+{% endblock %}
+{% block message %}
+    <h2>Lire un article</h2>
+{% endblock %}
+{% block content %}
+    {% include "blog/view.html" %}
+
+    <h3 id="comments">Commentaires</h3>
+    {% include "comments/list.html" %}
+
+    <h3>Ajouter un commentaire</h3>
+    {% get_comment_form for blog.article article.id as comment_form %}
+    {% include "comments/add.html" %}
+{% endblock %}

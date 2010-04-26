@@ -1,0 +1,26 @@
+{% load comments %}
+{% load markup %}
+
+{% get_comment_list for blog.article article.id as comments %}
+<div class="billet">
+    <div class="published" title="Posté le {{ article.date|date:"d F Y" }}">
+        {{ article.date|date:"M" }}
+        <span class="big">{{ article.date|date:"d"}}</span>
+        {{ article.date|date:"y"}}
+        <span class="big" title="{{ comments|length }} commentaire{{ comments|pluralize }} posté{{ comments|pluralize }}">
+            <a href="{{ article.get_absolute_url }}#comments">
+                {{ comments|length }}
+            </a>
+        </span>
+    </div>
+    <div class="post">
+        <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+        <span class="tags">
+        Posté dans 
+        {% for tag in article.get_tags %}
+            <a href="/blog/{{ tag.name }}">{{ tag }}</a>{% if not forloop.last %},{% endif %}
+        {% endfor %}
+        </span>
+        {{ article.content|markdown:"codehilite" }}
+    </div>
+</div>

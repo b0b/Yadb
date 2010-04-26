@@ -1,0 +1,6 @@
+html{background:#FFF}
+body{border:none;width:100%;font-size:8px;margin:0;padding:0}
+.col,.margin{padding:0}
+a{color:#000;text-decoration:none}
+a.link:link:after,a.link:visited:after{content:" (" attr(href) ") ";font-size:90%}
+h1,#title,#message,#navigation,#tools,#footer,.noprint{display:none}

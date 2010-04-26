@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Explorer - Visualiser un fichier{% endblock %}
+{% block media %}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}/css/pygments.css" type="text/css" />
+{% endblock %}
+{% block message %}
+    <h2>Visualiser un fichier</h2>
+{% endblock %}
+
+{% block content %}
+{{ content|safe }}
+{% endblock %}

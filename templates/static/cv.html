@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}CV Elève ingénieur : Leroux Alexandre{% endblock %}
+{% block message %}
+    <h2>Curriculum Vitæ</h2>
+{% endblock %}
+{% block content %}
+<p>
+    <a href="{{ MEDIA_URL }}/explorer/files/yawp/CV_Leroux_Alexandre.pdf" class="noprint">Télécharger au format pdf</a>
+    (contient mon mail et mon numéro de portable)
+</p>
+    <p>
+        Leroux Alexandre<br />
+        Elève ingénieur<br />
+        <span class="noprint"><a href="{% url contact %}">Me contacter</a><br /></span>
+        20 ans, né le 15/12/1989<br />
+    </p>
+    <h2>Formation</h2>
+    <div class="fleft">Depuis 2009</div>
+    <div class="col">
+        <p>
+            Diplôme <strong>ingénieur</strong> CTI<br />
+            Génie <strong>informatique</strong><br />
+            UTC (Université de Technologie de Compiègne)
+        </p>
+    </div>
+    <div class="fleft">2007 à 2009</div>
+    <div class="col">
+        <p>
+            <strong>DUT informatique</strong> option Systèmes Industriels<br />
+            IUT du Havre<br />
+        </p>
+    </div>
+    <div class="fleft">2004 à 2007</div>
+    <div class="col">
+        <p>
+            Baccalauréat S spécialité Mathématiques<br />
+            Lycée François 1er au Havre<br />
+        </p>
+    </div>
+    <h2>Connaissances</h2>
+    <div class="fleft">Programmation</div>
+    <div class="col">
+        <p>
+            Langages : <strong>Java, Python, C++, C#</strong>, VB.NET, VB6, C, Lisp, Prolog, XML<br />
+            Modélisation : <strong>UML</strong>, Merise<br />
+            Concepts :
+        </p>
+        <ul>
+            <li>Paradigmes : impératif, <strong>objet</strong>, fonctionnel, événementiel, logique</li>
+            <li>Algorithmique : listes, arbres, tris, graphes, optimisation combinatoire </li>
+            <li>Intelligence artificielle : systèmes agents, démonstration automatique</li>
+        </ul>
+    </div>
+    <div class="fleft">Web</div>
+    <div class="col">
+        <p>
+            Langages : <strong>PHP 4/5, Django, Javascript (Jquery)</strong>, XHTML 1.0, HTML 4/5, CSS 2/3<br />
+            BDD : <strong>Mysql</strong>, SQL Server, Access, pgSql<br />
+            Serveur : <strong>Apache</strong>, BIND, Postfix, DHCP
+        </p>
+    </div>
+    <div class="fleft">Environnement</div>
+    <div class="col">
+        <p>
+            UNIX : <strong>Debian</strong>, Archlinux, Gentoo, *BSD, OpenSolaris<br />
+            Windows : toutes versions<br />
+            Outils : Eclipse, Netbeans, Vim, Visual Studio, <strong>SVN</strong>, Git
+        </p>
+    </div>
+    <div class="fleft">Langues</div>
+    <div class="col">
+        <p>
+            Anglais niveau B2, bonne connaissance de l'anglais technique<br />
+            Allemand niveau moyen, pratiqué pendant 7 années
+        </p>
+    </div>
+    <h2>Expériences professionnelles</h2>
+    <div class="fleft">
+        Avril à Août 2009<br />
+        5mois<br />
+        VB6, Access
+    </div>
+    <div class="col">
+        <p>Stage de fin d'études (3 mois) et job d'été (2 mois) à la <a href="http://www.cim-france.com/" class="link">CIM</a></p>
+        <p>
+            <strong>Cahier des charges, conception, développement et déploiement d'un logiciel de gestion des quarts.</strong><br />
+            Génération dynamique de formulaires de saisie, gestion des droits d'accès, visualisation (graphes, listes) et sauvegarde (excel ou impression) des données.<br />
+            Tâches diverses :
+        </p>
+        <ul>
+            <li>Modifications sur l'intranet (PHP)</li>
+            <li>Macro Excel (conversion générique de représentations horizontales vers verticales)</li>
+            <li>Création d'un logiciel de gestion du budget du département informatique (VB6)</li>
+        </ul>
+    </div>
+    <div class="fleft">
+        Août 2008<br />
+        1 mois<br />
+        C#, Sql Server
+    </div>
+    <div class="col">
+        <p>Job d'été chez <a href="http://www.efbs-seafrigo.fr/" class="link">Seafrigo</a></p>
+        <p>
+            <strong>Cahier des charges, conception, développement et déploiement d'un logiciel de gestion comptable.</strong><br />
+            Filtrage, analyse et stockage dans une bdd de fichiers excel.<br />
+            Recherche, affichage et impression des données.
+        </p>
+    </div>
+    <h2>Divers</h2>
+    <p>
+        Titulaire du permis B<br />
+        Sport : Badminton<br />
+        Joueur d'échecs (elo 2000)<br />
+        Créateur et gérant de : <a href="http://www.yawp.fr" class="link">Yawp</a> et <a href="http://www.tiny-chess.com" class="link">Tiny Chess</a>
+    </p>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Résultats{% endblock %}
+{% block message %}
+<h2>
+    Résultats pour
+    {% for term in search_terms %}
+        {{ term.title }}{% if not forloop.last %},{% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+    {% if article_list %}
+        {% for article in article_list %}
+            <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+            {% autoescape off %}
+            {{ article.content|linebreaks|truncatewords:20 }}
+            {% endautoescape %}
+            <p>Posté dans {{ article.get_tags }}</p>
+        {% endfor %}
+    {% else %}
+        <p>Aucun résultats</p>
+    {% endif %}
+{% endblock %}

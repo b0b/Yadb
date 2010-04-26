@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load truncate %}
+
+{% block title %}Blog - Explorer - Liste des fichiers{% endblock %}
+{% block message %}
+<h2>Parcourir un dossier</h2>
+{% endblock %}
+{% block content %}
+    {% for dir in dirs %}
+        <div class="thumb">
+            <img src="{{ MEDIA_URL }}/img/dossier.png" alt="{{ dir }}" /><br />
+            <a href="/explorer/dir@{{ dirname }}/{{ dir }}">{{ dir|truncate:10 }}</a>
+        </div>
+    {% endfor %}
+    {% for file in files %}
+        <div class="thumb">
+            {% if file.thumb_path %}
+                <img src="{{ MEDIA_URL }}/{{ file.thumb_path }}" alt="{{ file.name }}" class="image" /><br />
+	        <a href="{{ MEDIA_URL }}/{{ file.path }}">{{ file.name|truncate:10 }}</a>
+            {% else %}
+                <img src="{{ MEDIA_URL }}/img/fichier.png" alt="{{ file.name }}" /><br />
+		{% if file.lexer_path %}
+                    <a href="{{ dirname }}/{{ file.lexer_path }}">{{ file.name|truncate:10 }}</a>
+		{% else %}
+                    <a href="{{ MEDIA_URL }}/{{ file.path }}">{{ file.name|truncate:10 }}</a>
+		{% endif %}
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

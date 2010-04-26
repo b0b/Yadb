@@ -1,0 +1,17 @@
+{% if is_paginated %}
+    <p class="pagination">
+        {% if page_obj.has_previous %}
+        <a href="{{ base_url }}/page/{{ page_obj.previous_page_number }}">&laquo; Précédent</a>
+        {% endif %}
+        {% for num_page in page_range %}
+            {% ifequal num_page page %}
+                <span class="current">{{ num_page }}</span>
+            {% else %}
+                <a href="{{ base_url }}/page/{{ num_page }}">{{ num_page }}</a>
+            {% endifequal %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <a href="{{ base_url }}/page/{{ page_obj.next_page_number }}">Suivant &raquo;</a>
+        {% endif %}
+    </p>
+{% endif %}

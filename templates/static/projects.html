@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Mes projets{% endblock %}
+{% block message %}
+<h2>Mes projets</h2>
+{% endblock %}
+{% block content %}
+<p></p>
+<table>
+    <caption>Web</caption>
+    <thead>
+        <tr>
+            <td>Nom</td>
+            <td>Description</td>
+            <td>Screenshot</td>
+            <td>Statut</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd">
+            <td><a href="http://www.yawp.fr">Yawp</a></td>
+            <td class="left">
+                Cet <acronym title="Yet Another Web Project">acronyme obscur</acronym> désignait originellement mon framework PHP personnel.
+                Aujourd'hui c'est un site regroupant mon blog, mes fichiers et mon cv.
+                Par curiosité j'ai commencé à le recoder avec Django en février 2010.
+            </td>
+            <td>
+                <a href="http://www.yawp.fr">
+                    <img src="{{ MEDIA_URL }}/explorer/files/yawp/yawp.jpg" alt="yawp" />
+                </a>
+            </td>
+            <td>
+                <span class="orange">En développement</span><br />
+                <span class="green">
+                    En ligne<br />
+                    <a href="#">Sources</a> sous BSD
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="http://www.tiny-chess.com">Tiny Chess</a></td>
+            <td class="left">
+                Tiny chess est un jeu d'échecs vous permettant de jouer en temps réel contre un ami.
+                Entièrement réalisé en html et javascript, il se base sur <a href="http://en.wikipedia.org/wiki/Comet_%28programming%29">Comet</a>
+                pour émuler un système de sockets.
+            </td>
+            <td>
+                <a href="http://www.tiny-chess.com">
+                    <img src="{{ MEDIA_URL }}/explorer/files/yawp/tinychess.jpg" alt="tinychess" />
+                </a>
+            </td>
+            <td>
+                <span class="green">Terminé<br />En ligne<br /></span>
+                <span class="red">Sources fermées</span>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>Chrome Crawler</td>
+            <td class="left">
+                Plugin Chrome dont le but est de fournir une interface intuitive à un crawling manuel.
+                Rendu graphique réalisé avec SVG. Export possible vers <a href="http://gephi.org/">Gephi</a>.
+            </td>
+            <td>Aucun</td>
+            <td>
+                <span class="orange">En développement</span><br />
+                <span class="red">Hors ligne</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Yag</td>
+            <td class="left">Yag est un plugin jquery affichant sous forme de diaporama les images d'une page web.</td>
+            <td>Aucun</td>
+            <td>
+                <span class="orange">En développement</span><br />
+                <span class="green">
+                    En ligne<br />
+                    <a href="#">Sources</a> sous BSD
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <caption>Divers</caption>
+    <thead>
+        <tr>
+            <td>Nom</td>
+            <td>Description</td>
+            <td>Screenshot</td>
+            <td>Statut</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd">
+            <td><a href="http://github.com/b0b/dotfiles">Dotfiles</a></td>
+            <td class="left">Dépôt Git contenant tous les fichiers de configuration de mon environnement Archlinux.</td>
+            <td>
+                <a href="{{ MEDIA_URL }}/explorer/files/yawp/desktop.png">
+                    <img src="{{ MEDIA_URL }}/explorer/files/yawp/desktop_thumb.jpg" alt="desktop" />
+                </a>
+            </td>
+            <td>
+                <span class="orange">En développement</span><br />
+                <span class="green">
+                    En ligne<br />
+                    <a href="http://github.com/b0b/dotfiles">Sources</a> sous BSD
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

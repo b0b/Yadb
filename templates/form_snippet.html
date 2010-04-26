@@ -1,0 +1,6 @@
+<fieldset>
+    {% for field in form %}
+        {% if field.errors %}<div class="error">{{ field.errors }}{% endif %}{{ field.label_tag }} {{ field }}<br />{% if field.errors %}</div>{% endif %}
+    {% endfor %}
+    <input type="submit" value="Envoyer" />
+</fieldset>

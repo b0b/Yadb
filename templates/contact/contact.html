@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Me contacter{% endblock %}
+{% block message %}
+    <h2>Me contacter</h2>
+{% endblock %}
+{% block content %}
+{% if send %}
+    <p class="info">Votre message a été envoyé. Ma réponse vous parviendra sous 24h.</p>
+{% endif %}
+<p>
+    Vous avez des questions, des remarques, des suggestions ou des propositions ?<br />
+    N'hésitez pas à m'envoyer un mail à l'adresse : &lt;nom&gt;.&lt;prénom&gt;@yawp.fr
+    (allez <a href="{% url cv %}">lire mon cv</a> pour trouver les bons substituts).<br />
+    Si vous avez des difficultés à vaincre cet anti-bot (ou une flemmingite aiguë)
+    vous pouvez utiliser le formulaire ci-dessous :)
+</p>
+<p>NB : L'envoi du mail peut être long si vous utilisez le formulaire.</p>
+<form action="/contact/" method="post">
+    {% include "form_snippet.html" %}
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Blog - Commentaire posté
+{% endblock %}
+
+{% block message %}
+    <h2>Commentaire posté avec succès !</h2>
+{% endblock %}
+
+{% block content %}
+    <p>Merci pour votre contribution.</p>
+    {% if comment %}
+        <a href="{{ comment.get_absolute_url }}">Retournez à l'article</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% for comment in comments %}
+<div class="comment">
+    <div class="published" title="Posté le {{ comment.submit_date|date:"d F Y" }}">
+        {{ comment.submit_date|date:"M" }}
+        <span class="big">{{ comment.submit_date|date:"d" }}</span>
+        {{ comment.submit_date|date:"y" }}<br />
+        <a href="#c{{ forloop.counter }}" title="Lien vers le commentaire">#</a>
+    </div>
+    <div class="post">
+        <p id="c{{ forloop.counter }}">
+        {% if comment.url %}
+            <a href="{{ comment.url }}" title="Site de {{ comment.name }}">
+                {{ comment.name }}
+            </a>
+        {% else %}
+            {{ comment.name }}
+        {% endif %}
+        a posté à {{ comment.submit_date|date:"H\hi" }} :
+        </p>
+        <p>
+        {{ comment.comment }}
+        </p>
+    </div>
+</div>
+{% empty %}
+    Aucun commentaire :(
+{% endfor %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load tagging_tags %}
+
+{% block title %}Blog - Liste des articles{% endblock %}
+{% block media %}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}/css/pygments.css" type="text/css" />
+    {% if tags %}
+    <link rel="alternate" type="application/rss+xml" title="Flux RSS pour {{ tags }}" href="/feeds/rss/{{ tags }}" />
+    <link rel="alternate" type="application/xml" title="Flux Atom pour {{ tags }}" href="/feeds/atom/{{ tags }}" />
+    {% endif %}
+{% endblock %}
+{% block message %}
+    <h2>{{ message }}</h2>
+{% endblock %}
+{% block content %}
+    {% for article in article_list %}
+        {% include "blog/view.html" %}
+        {% empty %}
+            <p>Aucun article n'est disponible.</p>
+    {% endfor %}
+    {% include "blog/pagination.html" %}
+    <div id="tags">
+        Nuage de tags :
+        {% tag_cloud_for_model blog.Article as tags with steps=30 min_count=0 distribution=log %}
+        {% for tag in tags %}
+            <a href="/blog/{{ tag.name }}" style="font-size:{{ tag.font_size|add:"10" }}px">{{ tag }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
